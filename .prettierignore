@@ -17,6 +17,7 @@ jest.config.js
 package-lock.json
 package.json
 release.config.js
+*.md
 
 # Logs
 logs

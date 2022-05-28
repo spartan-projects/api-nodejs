@@ -1,3 +1,3 @@
-test("this is a dummy test", () => {
+test('this is a dummy test', () => {
   expect(1).toBe(1);
 });

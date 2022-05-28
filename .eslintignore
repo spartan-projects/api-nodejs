@@ -8,3 +8,4 @@ package-lock.json
 package.json
 release.config.js
 node_modules/
+*.md
