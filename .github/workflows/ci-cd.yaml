@@ -12,10 +12,6 @@ defaults:
 
 jobs:
   integration:
-    env:
-      TEST_TOOGLE: false
-      BUILD_TOOGLE: true
-      RELEASE_TOGGLE: true
     strategy:
       fail-fast: false
       matrix: 
@@ -34,22 +30,21 @@ jobs:
       - name: "Install Packages"
         run: npm ci
       - name: Run Tests
-        if: env.TEST_TOOGLE == true
         run: npm test -- --coverage
       - name: "Build Application"
-        if: env.BUILD_TOOGLE == true && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           mkdir -p dist/
           zip -r dist.zip . -x node_modules/**\*; mv dist.zip dist/
           zip -r coverage.zip coverage/; mv coverage.zip dist/
       - name: "Store artifacts"
-        if: env.BUILD_TOOGLE == true && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v2
         with:
           name: distributable
           path: dist/
       - name: "Create Release"
-        if: env.RELEASE_TOGGLE == true && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
