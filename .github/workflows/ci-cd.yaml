@@ -28,7 +28,7 @@ jobs:
       - name: "Checkout Repository"
         uses: actions/checkout@v3
       - name: "Install Packages"
-        run: npm ci
+        run: npm ci --ignore-scripts
       - name: "Run Linter"
         run: npm run eslint
       - name: Run Tests
