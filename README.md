@@ -58,6 +58,26 @@ To install semantic release we must follow these steps
 
     Create a file called `release.config.js` like the one provided in the current repository.
 
+### Install Jest
+
+This depemdency will allow us to enable Unit Tests for our application. Follow the [Getting Started Guide](https://jestjs.io/docs/getting-started) to enable Jest in the project.
+To install Jest:
+
+```bash
+    npm install --save-dev jest
+```
+
+Once installed, run the following command to init Jest:
+
+```bash
+    jest --init
+```
+
+Where we choose the following options:
+![Jest Configuration Options](/docs/assets/jest-configuration.jpg "Jest Config")
+
+Since we choose `babel` as a provider to instrument code for coverage, we must add the configuration described here: [Additional Babel config for Jest](https://jestjs.io/docs/getting-started#using-babel)
+
 ## Application Configuration
 
 | Framework  |             Install                |                            Description                           |
