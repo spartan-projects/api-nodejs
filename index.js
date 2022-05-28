@@ -9,5 +9,5 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 app.listen(port, () => {
-    console.log(`Server listening on port: ${port}`)
-})
+  console.log(`Server listening on port: ${port}`);
+});

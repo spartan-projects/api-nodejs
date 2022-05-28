@@ -1,0 +1,10 @@
+# Config files
+.eslintrc.js
+.prettierrc.json
+babel.config.js
+commitlint.config.js
+jest.config.js
+package-lock.json
+package.json
+release.config.js
+node_modules/
