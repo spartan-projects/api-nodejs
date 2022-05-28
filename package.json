@@ -1,0 +1,52 @@
+{
+  "name": "api-nodejs",
+  "version": "1.0.0",
+  "description": "Restful API created by using NodeJS and Express framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "prod": "npm install && node index.js", 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spartan-projects/api-nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spartan-projects/api-nodejs/issues"
+  },
+  "homepage": "https://github.com/spartan-projects/api-nodejs#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.1",
+    "nodemon": "^2.0.16",
+    "semantic-release": "^19.0.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  }
+}
