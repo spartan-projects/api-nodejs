@@ -1,6 +1,6 @@
 module.exports = {
     branches: ['main'],
-    repositoryUrl: 'https://github.com/spartan-projects/api-rest',
+    repositoryUrl: 'https://github.com/spartan-projects/api-nodejs',
     plugins: [
         '@semantic-release/commit-analyzer', 
         '@semantic-release/release-notes-generator', 
