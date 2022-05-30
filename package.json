@@ -10,7 +10,9 @@
     "commit": "cz",
     "eslint": "npx eslint .",
     "prettier": "npx prettier --write .",
-    "prepare": "npm run prettier && npm run eslint"
+    "prepare": "npm run prettier && npm run eslint",
+    "udocker": "docker-compose -f docker-compose.yaml up -d",
+    "ddocker": "docker-compose -f docker-compose.yaml down"
   },
   "repository": {
     "type": "git",
