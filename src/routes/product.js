@@ -3,7 +3,7 @@ const router = new express.Router();
 
 const responsesBuilder = require('../common/response');
 
-router.get('/products', (req, res) => {
+router.get('/', (req, res) => {
   const staticResponse = responsesBuilder.genericResponseBuilder(
     3001,
     responsesBuilder.staticMessage('GET /products')
@@ -11,7 +11,7 @@ router.get('/products', (req, res) => {
   res.status(200).send(staticResponse);
 });
 
-router.get('/product/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const staticResponse = responsesBuilder.genericResponseBuilder(
     3001,
     responsesBuilder.staticMessage('GET /product/:id', `Id ${req.params.id}`)
@@ -19,7 +19,7 @@ router.get('/product/:id', (req, res) => {
   res.status(200).send(staticResponse);
 });
 
-router.post('/product/', (req, res) => {
+router.post('/', (req, res) => {
   const staticResponse = responsesBuilder.genericResponseBuilder(
     3001,
     responsesBuilder.staticMessage('POST /product', req.body)
@@ -27,7 +27,7 @@ router.post('/product/', (req, res) => {
   return res.status(200).send(staticResponse);
 });
 
-router.put('/product/:id/', (req, res) => {
+router.put('/:id', (req, res) => {
   const staticResponse = responsesBuilder.genericResponseBuilder(
     3002,
     responsesBuilder.staticMessage('PUT /product', req.body)
@@ -35,7 +35,7 @@ router.put('/product/:id/', (req, res) => {
   return res.status(200).send(staticResponse);
 });
 
-router.delete('/product/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const staticResponse = responsesBuilder.genericResponseBuilder(
     3001,
     responsesBuilder.staticMessage('DELETE /product/:id', `Id ${req.params.id}`)
